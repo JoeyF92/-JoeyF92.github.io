@@ -174,10 +174,9 @@ document.addEventListener('DOMContentLoaded', function(){
                   check.classList.add('active'); 
                   setTimeout(function() {
                     loader.classList.remove('active');
+                    document.getElementById("email-form").reset();
                   }, 5000);
-                  emailName = "";
-                  emailAdd = "";
-                  emailBody = "";
+                  
                 });
                 
             }
@@ -190,6 +189,7 @@ document.addEventListener('DOMContentLoaded', function(){
             error.animationPlayState = "running";
           });
         });
+        
         return false;
     }
 
