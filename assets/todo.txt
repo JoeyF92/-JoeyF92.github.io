@@ -1,0 +1,11 @@
+Complete the video transition thing for all 7 videos
+
+Work out how to show video content- autoplay?
+Work on links for everything, and update images
+Work on animations for navbar, focus colours, wobbley boxes
+do i want a footer? Just says Joe Fountain - Back to the top
+work on mobile responsiveness
+
+
+Work on colour scheme
+Get the rest of my cs50 work on github
