@@ -1,19 +1,20 @@
 body {
-  background-color: #03001C;
+  background-color: #03001c;
   color: #eafff9;
   font-family: lato;
   overflow-x: hidden;
 }
 
 a {
-  color: #B6EADA;
+  color: #b6eada;
 }
 
 a:hover {
   color: #96acbe;
 }
 
-p, label {
+p,
+label {
   color: #96acbe;
 }
 
@@ -23,7 +24,7 @@ p, label {
 }
 .navbar a {
   position: relative; /* establish relative positioning for pseudo-element */
-  color: #301E67; /* set font color */
+  color: #301e67; /* set font color */
 }
 .navbar a::before {
   content: ""; /* create pseudo-element */
@@ -32,7 +33,7 @@ p, label {
   left: 0; /* start pseudo-element at left edge of text */
   width: 0; /* set initial width to 0 */
   height: 3px; /* set height of underline */
-  background-color: #B6EADA; /* set color of underline */
+  background-color: #b6eada; /* set color of underline */
   transition: width 0.2s ease-in-out; /* add transition effect to width */
 }
 .navbar a:hover::before {
@@ -59,10 +60,12 @@ hr {
   margin: 5rem auto 5rem auto;
   border: none;
   outline: none;
-  box-shadow: 1px 1px 14px 3px #B6EADA;
+  box-shadow: 1px 1px 14px 3px #b6eada;
 }
 
-header, section, footer {
+header,
+section,
+footer {
   width: 70vw;
   margin: auto;
 }
@@ -130,11 +133,13 @@ header #header-div h1 {
   padding: 1rem 1rem 1rem 1rem;
   overflow-y: hidden;
 }
-#projects .proj-instance p, #projects .proj-instance a {
+#projects .proj-instance p,
+#projects .proj-instance a {
   text-align: center;
 }
 #projects .proj-instance:hover {
   cursor: grab;
+  animation: wiggle 2.5s;
 }
 #projects .project-info {
   margin: 1rem auto 0 auto;
@@ -142,7 +147,7 @@ header #header-div h1 {
 }
 #projects .project-info .main-proj-title {
   margin-bottom: 2rem;
-  color: #B6EADA;
+  color: #b6eada;
 }
 
 #qualifications {
@@ -170,7 +175,7 @@ header #header-div h1 {
   padding-left: 0.4rem;
 }
 #qualifications .course-div .course-div-right p {
-  color: #B6EADA;
+  color: #b6eada;
 }
 
 #contact-me {
@@ -192,7 +197,8 @@ header #header-div h1 {
 #contact-me label {
   text-align: left;
 }
-#contact-me input, #contact-me textarea {
+#contact-me input,
+#contact-me textarea {
   width: 100%;
   background-color: rgba(255, 255, 255, 0.3294117647);
   border: none;
@@ -200,7 +206,7 @@ header #header-div h1 {
   margin-left: auto;
   margin-bottom: 2rem;
   box-shadow: 4px 4px 10px rgba(91, 143, 185, 0.4588235294);
-  color: #B6EADA;
+  color: #b6eada;
 }
 #contact-me .input-class {
   text-align: center;
@@ -369,6 +375,32 @@ footer {
     width: 100%; /* expand width to 100% */
   }
 }
+@keyframes wiggle {
+  0% {
+    transform: rotate(5deg);
+  }
+  15% {
+    transform: rotate(-5deg);
+  }
+  30% {
+    transform: rotate(5deg);
+  }
+  45% {
+    transform: rotate(-5deg);
+  }
+  60% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  90% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 @media (max-width: 700px) {
   #projects .project-grid .proj-instance {
     width: 160px;
@@ -440,7 +472,10 @@ footer {
   }
 }
 @media (max-width: 415px) {
-  #qualifications, #projects, #contact-me, #header-div {
+  #qualifications,
+  #projects,
+  #contact-me,
+  #header-div {
     width: 90%;
   }
   h1 {
@@ -450,7 +485,11 @@ footer {
   h3 {
     font-size: 1.1rem;
   }
-  p, a, label, input, textarea {
+  p,
+  a,
+  label,
+  input,
+  textarea {
     font-size: 0.8rem;
   }
   #header-div img {
@@ -462,7 +501,8 @@ footer {
   .project-info h5 {
     font-size: 1rem;
   }
-  .project-info p, .project-info a {
+  .project-info p,
+  .project-info a {
     font-size: 0.7rem;
   }
   .proj-instance {
