@@ -1,34 +1,35 @@
-$color1: #03001c;
-$color2: #301e67;
-$color3: #96acbe;
-$color4: #b6eada;
-$color5: #eafff9;
+$color1: #fff;
+$color2: #000000;
+$color3: #ffc8c8;
+$color4: #ffb5b5;
+$color5: #ff5858;
+$color6: #ff9090;
+$color7: #ff6b6b;
+$color8: #ffa3a338;
+$color9: #ff7d7d;
+$color10: #e4dfdfa8;
+$color11: #f1f1f17e;
 
 body {
   background-color: $color1;
-  color: $color5;
+  color: $color2;
   font-family: lato;
   overflow-x: hidden;
-}
-
-a {
-  color: $color4;
-}
-a:hover {
-  color: $color3;
-}
-
-p,
-label {
-  color: $color3;
+  width: 100vw;
+  padding-top: 60px;
 }
 
 .navbar {
+  position: fixed;
+  top: 0;
+  z-index: 100;
   width: 100vw;
   display: inline-block;
   a {
     position: relative; /* establish relative positioning for pseudo-element */
-    color: $color2; /* set font color */
+    color: $color6 !important; /* set font color */
+    text-transform: uppercase;
+    font-size: 0.9rem;
   }
 
   a::before {
@@ -62,12 +63,12 @@ label {
 }
 
 hr {
-  background-color: #ffffff;
+  background-color: $color2;
   height: 1px;
-  margin: 5rem auto 5rem auto;
+  margin: 5rem auto 2rem auto;
   border: none;
   outline: none;
-  box-shadow: 1px 1px 14px 3px $color4;
+  box-shadow: 0px 0px 5px 0px $color3;
 }
 
 header,
@@ -82,45 +83,168 @@ p {
 }
 
 header {
-  margin-top: 4rem;
-  p {
-    text-align: center;
+  // height: 100vh;
+  #hidden-h3 {
+    display: none;
   }
+  margin-top: 2rem;
 
   #header-div {
     display: flex;
-    width: 60vw;
-    margin: auto;
-    margin-bottom: 2rem;
-    img {
-      width: 10rem;
-    }
+    justify-content: center;
+    width: 80vw;
+    padding-bottom: 4rem;
 
-    h1 {
-      margin: auto;
+    #title-div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 35%;
+      height: 22rem;
+
+      h1 {
+        font-family: Rubik;
+        font-size: 5.5rem;
+        min-height: 11rem;
+        max-width: 20rem;
+      }
+      h3 {
+        width: 33rem;
+        font-family: Rubik;
+        font-size: 2rem;
+        margin-top: 1.5rem;
+        color: $color5;
+      }
+    }
+    #header-image {
+      width: 65%;
+      display: flex;
+
+      img {
+        width: 20rem;
+        margin: auto;
+        transition: transform 0.3s ease;
+      }
+      img:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+  #header-content {
+    text-align: center;
+    p {
+      color: $color2;
+      font-size: 1.4rem;
+    }
+    #key-skills {
+      text-align: center;
+    }
+    #header-bio {
+      text-align: left;
+    }
+    #skills-list {
+      margin-top: 0.5rem;
+      text-align: center;
+      span {
+        font-size: 1.1rem;
+        padding: 0 1rem 0 1rem;
+        transition: transform 0.2s ease;
+        display: inline-block; /* Add this to enable 3D transformations */
+      }
+
+      span:not(:first-child):hover {
+        color: $color5;
+        transform: skewY(20deg) skewX(80deg);
+      }
+    }
+    #cv-button {
+      color: $color1;
+      background-color: $color6;
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: 600;
+      text-align: center;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    }
+    /* Hover Effect */
+    #cv-button:hover {
+      background-color: $color5;
+    }
+    #cv-button:focus {
+      outline: none;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 3.7);
+    }
+  }
+  @media (max-width: 1000px) {
+    header {
+      #header-div {
+        #title-div {
+          h1 {
+            font-size: 4.5rem;
+          }
+        }
+        #header-image {
+          img {
+            width: 15rem;
+          }
+        }
+      }
     }
   }
 }
 
 #projects {
+  padding-top: 100px;
   #main-project {
     display: flex;
   }
   h2 {
     margin-bottom: 3rem;
+    font-family: Rubik;
+    color: $color2;
   }
+  .main-proj-title {
+    font-family: lato;
+    font-weight: 500;
+    color: $color1;
+  }
+
   #main-video-div {
-    margin: auto;
-    width: 100%;
-    margin-bottom: 4rem;
+    position: relative;
+    width: 80%;
+
+    margin: 0 auto 2rem auto;
   }
+
+  .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   #main-video {
     width: 100%;
-    margin-top: 2rem;
-    border: 4px solid black;
+    border: 4px solid $color10;
     aspect-ratio: 16/9;
     justify-content: center;
-    box-shadow: 4px 8px 12px 2px rgba(91, 143, 185, 0.4588235294);
+    box-shadow: 0 4px 8px $color3;
+  }
+  #other-projects-title {
+    margin-top: 4rem;
   }
 
   .project-grid {
@@ -133,8 +257,8 @@ header {
   }
 
   .proj-instance {
-    box-shadow: 4px 8px 12px 2px rgba(91, 143, 185, 0.4588235294);
-    background-color: #ffffff18;
+    box-shadow: 0px 3px 8px 0px $color2;
+    background-color: #ffffff46;
     width: 220px;
     margin-top: 1.5rem;
     margin: 1.5rem 0.5rem auto 0.5rem;
@@ -148,26 +272,67 @@ header {
     a {
       text-align: center;
     }
+    p {
+      font-size: 1.3rem;
+    }
   }
   .proj-instance:hover {
-    cursor: grab;
+    cursor: pointer;
     animation: wiggle 2.5s;
   }
 
   .project-info {
+    width: 80%;
     margin: 1rem auto 0 auto;
-    text-align: center;
-    .main-proj-title {
-      margin-bottom: 2rem;
-      color: $color4;
+    p {
+      text-align: center;
+      font-size: 1.1rem;
+    }
+    span {
+      font-size: 1.1rem;
+      padding: 0 0.2rem 0 0.2rem;
+    }
+    span:hover {
+      color: $color7;
+    }
+    .main-proj-check {
+      color: $color1;
+      background-color: $color6;
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: 600;
+      text-align: center;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    }
+    /* Hover Effect */
+    .main-proj-check:hover {
+      background-color: $color5;
+    }
+    .main-proj-check:focus {
+      outline: none;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     }
   }
 }
 
 #qualifications {
-  margin-top: 3rem;
+  padding-top: 100px;
   h2 {
+    font-family: rubik;
     margin-bottom: 4rem;
+  }
+  h3 {
+    font-size: 1.4rem;
+  }
+  p {
+    font-size: 1.2rem;
   }
   .course-div {
     display: flex;
@@ -193,8 +358,10 @@ header {
 }
 
 #contact-me {
+  padding-top: 60px;
   h2 {
-    margin-bottom: 2rem;
+    font-family: rubik;
+    margin-bottom: 4rem;
   }
   perspective: 1000px;
   #email-div {
@@ -205,6 +372,7 @@ header {
   }
   #email-form {
     width: 95%;
+    max-width: 30rem;
     margin: 1rem auto 2rem auto;
   }
   label {
@@ -212,14 +380,16 @@ header {
   }
   input,
   textarea {
+    background-color: $color11;
     width: 100%;
-    background-color: #ffffff54;
     border: none;
     padding: 0.5rem;
     margin-left: auto;
     margin-bottom: 2rem;
-    box-shadow: 4px 4px 10px #5b8fb975;
-    color: $color4;
+    box-shadow: 0 1px 1px $color2;
+  }
+  #email-body {
+    height: 10rem;
   }
 
   .input-class {
@@ -233,29 +403,30 @@ header {
   }
 
   #form-button {
+    color: $color1;
+    background-color: $color6;
+    display: inline-block;
     margin-top: 1rem;
-    width: 6rem;
-    box-shadow: 0px 6px 6px $color3;
-    border-radius: 20%;
-    border: none;
-    color: $color3;
-    background: white;
-    position: relative;
+    margin-bottom: 2rem;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
     text-transform: uppercase;
-    font-weight: 300;
-    letter-spacing: 2px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
   }
 
   #form-button:hover {
-    top: 2px;
-    color: #c2c2d3;
-    box-shadow: 0 4px 4px $color3;
+    background-color: $color5;
   }
 
-  #form-button:active {
-    top: 6px;
-    color: #90909c;
-    box-shadow: 0 1px 1px $color3;
+  #form-button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 3.7);
   }
 
   .loader {
@@ -267,7 +438,7 @@ header {
     background: transparent;
     margin: 30px auto 0 auto;
     border: solid 2px #424242;
-    border-top: solid 2px #1c89ff;
+    border-top: solid 2px $color6;
     border-radius: 50%;
     opacity: 0;
   }
@@ -312,7 +483,7 @@ header {
 
   #error {
     display: block;
-    color: red;
+    color: $color7;
     text-align: center;
     animation: blink 1s;
     animation-iteration-count: 6;
@@ -323,6 +494,15 @@ header {
 footer {
   display: flex;
   justify-content: space-between;
+  p {
+    font-size: 1rem;
+  }
+  a {
+    color: $color6;
+  }
+  a:hover {
+    color: $color5;
+  }
 }
 
 .hide-project {
@@ -380,7 +560,7 @@ footer {
   100% {
     opacity: 1;
     transform: rotate(1080deg);
-    border-color: #1c89ff;
+    border-color: $color4;
   }
 }
 
@@ -432,142 +612,447 @@ footer {
   }
 }
 
-@media (max-width: 700px) {
-  #projects {
-    .project-grid {
-      .proj-instance {
-        width: 160px;
+@media (max-width: 1000px) {
+  header {
+    #header-div {
+      padding-bottom: 2rem;
+      #title-div {
+        height: 18rem;
+        h1 {
+          font-size: 4.5rem;
+        }
+        h3 {
+          font-size: 1.5rem;
+        }
+      }
+      #header-image {
+        img {
+          width: 15rem;
+        }
+      }
+    }
+    #header-content {
+      p {
+        font-size: 1rem;
+      }
+      #skills-list {
+        span {
+          font-size: 0.9rem;
+        }
+      }
+      #cv-button {
+        margin-top: 1rem;
+        font-size: 14px;
+        padding: 8px 16px;
       }
     }
   }
-}
-
-@media (max-width: 1300px) {
-  p {
-    font-size: 1.2rem;
-  }
-
   #projects {
-    #main-video-div {
-      margin-bottom: 2rem;
+    .project-info {
+      p,
+      span {
+        font-size: 1rem;
+      }
+      .main-proj-check {
+        margin-top: 1rem;
+        font-size: 14px;
+        padding: 8px 16px;
+      }
     }
-  }
-}
-
-@media (max-width: 600px) {
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  h3 {
-    font-size: 1.3rem;
-  }
-
-  p {
-    font-size: 1.1rem;
-  }
-
-  #header-div {
-    flex-direction: column;
-    h1 {
-      padding-bottom: 2rem;
+    .video-overlay {
+      height: 1.4rem;
     }
-    img {
-      width: 12rem;
-      margin: auto;
+    .main-proj-title {
+      padding-top: 0.3rem;
+      font-size: 1.2rem;
     }
-  }
-  .course-div {
-    flex-direction: column;
-    align-items: center;
-    .course-div-left {
-      margin-bottom: 1.5rem;
-    }
-    .course-div-right {
-      text-align: center;
-      h5 {
+    .proj-instance {
+      width: 180px;
+      p {
         font-size: 1.1rem;
       }
     }
   }
+  #qualifications {
+    padding-top: 100px;
+    h2 {
+      font-size: 1.8rem;
+    }
+    h3 {
+    }
+  }
+  #contact-me {
+    h2 {
+      font-size: 2rem;
+    }
+    #form-button {
+      margin-top: 1rem;
+      font-size: 14px;
+      padding: 8px 16px;
+      margin-bottom: 0;
+    }
+  }
 }
-
-@media (max-width: 576px) {
-  .navbar-nav {
-    margin: auto;
-  }
-
-  p {
-    font-size: 1rem;
-  }
-  hr {
-    margin: 3rem auto 3rem auto;
+@media (max-width: 860px) {
+  header {
+    #header-div {
+      padding-bottom: 0;
+      #title-div {
+        height: 18rem;
+        h1 {
+          font-size: 3.5rem;
+          min-height: 4rem;
+        }
+        h3 {
+          font-size: 1.3rem;
+          margin-top: 1rem;
+        }
+      }
+      #header-image {
+        img {
+          width: 12rem;
+        }
+      }
+    }
+    #header-content {
+      #header-bio {
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+    }
   }
   #projects {
-    .project-info {
-      h5 {
-        font-size: 1.2rem;
+    .proj-instance {
+      width: 160px;
+      p {
+        font-size: 1.1rem;
       }
-      a {
+    }
+  }
+  #qualifications {
+    h3 {
+      font-size: 1.2rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+    #error {
+      p {
+        font-size: 0.5rem;
+      }
+    }
+  }
+  footer {
+    p,
+    a {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  header {
+    #header-div {
+      height: 17rem;
+      padding-bottom: 0;
+      #title-div {
+        height: 18rem;
+        h3 {
+          font-size: 1.2rem;
+        }
+      }
+    }
+    #header-content {
+      #skills-list {
+        margin-top: 2rem;
+        span {
+          padding: 0 0.5rem 0 0.5rem;
+        }
+      }
+    }
+  }
+  #projects {
+    h2 {
+      font-size: 1.5rem;
+    }
+    #main-video-div {
+      width: auto;
+    }
+    .project-info {
+      p,
+      span {
+        font-size: 0.9rem;
+      }
+    }
+    .proj-instance {
+      width: 140px;
+      p {
+        font-size: 0.9rem;
+      }
+    }
+  }
+  #qualifications {
+    h2 {
+      font-size: 1.5rem;
+    }
+    h3 {
+      font-size: 1rem;
+    }
+    p {
+      font-size: 0.9rem;
+    }
+    .course-div {
+      .course-div-left {
+        img {
+          width: 2.5rem;
+        }
+      }
+    }
+  }
+  #contact-me {
+    padding-top: 1.5rem;
+    h2 {
+      font-size: 1.5rem;
+    }
+    #email-form {
+      width: 20rem;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  header {
+    #hidden-h3 {
+      display: block;
+      font-size: 1.1rem;
+      font-family: rubik;
+      color: $color5;
+      margin-bottom: 1rem;
+    }
+    #header-div {
+      height: 20rem;
+      max-width: 15rem;
+      margin: auto;
+      flex-direction: column;
+      #title-div {
+        width: 100%;
+        height: 10vh;
+        h1 {
+          font-size: 2rem;
+          text-align: center;
+        }
+
+        h3 {
+          display: none;
+        }
+      }
+      #header-image {
+        width: 100%;
+      }
+    }
+    #header-content {
+      #header-bio {
+        font-size: 0.7rem;
+      }
+      #skills-list {
+        span {
+          font-size: 0.7rem;
+          padding: 0 0.25rem;
+        }
+      }
+      #cv-button {
+        font-size: 10px;
+      }
+    }
+  }
+  #projects {
+    h2 {
+      font-size: 1.3rem;
+    }
+    #main-project {
+      height: 10rem;
+    }
+    .video-overlay {
+      height: 1.1rem;
+    }
+    .main-proj-title {
+      padding-top: 0.3rem;
+      font-size: 1.2rem;
+    }
+    .project-info {
+      .main-proj-check {
+        font-size: 10px;
+      }
+      p,
+      span {
         font-size: 0.8rem;
       }
     }
-
-    .project-grid {
-      margin-top: 1rem;
-      .proj-instance {
-        width: 130px;
+    .proj-instance {
+      width: 120px;
+      p {
+        font-size: 0.8rem;
       }
+    }
+  }
+  #qualifications {
+    padding-top: 100px;
+    h2 {
+      font-size: 1.3rem;
+    }
+    h3 {
+      font-size: 0.9rem;
+    }
+    p {
+      font-size: 0.7rem;
+    }
+    .course-div {
+      .course-div-left {
+        img {
+          width: 2rem;
+        }
+      }
+    }
+  }
+  #contact-me {
+    #form-button {
+      font-size: 12px;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    #email-form {
+      width: 17rem;
     }
   }
 }
 
-@media (max-width: 415px) {
-  #qualifications,
-  #projects,
-  #contact-me,
-  #header-div {
-    width: 90%;
-  }
-  h1 {
-    font-size: 1.8rem;
-    text-align: center;
-  }
-  h3 {
-    font-size: 1.1rem;
-  }
-  p,
-  a,
-  label,
-  input,
-  textarea {
-    font-size: 0.8rem;
-  }
-  #header-div {
-    img {
-      width: 9rem;
+@media (max-width: 390px) {
+  #projects {
+    .proj-instance {
+      width: auto;
+      p {
+        font-size: 1rem;
+      }
     }
   }
+  #contact-me {
+    #form-button {
+      font-size: 12px;
+    }
 
-  .project-info {
-    width: 100%;
-    h5 {
-      font-size: 1rem;
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 2.5rem;
     }
+    input,
+    textarea {
+      font-size: 0.6rem;
+    }
+    #email-form {
+      width: 14rem;
+    }
+    #email-body {
+      height: 5rem;
+    }
+  }
+  footer {
     p,
     a {
-      font-size: 0.7rem;
+      font-size: 0.6rem;
     }
   }
+}
 
-  .proj-instance {
-    width: 110px;
+@media (max-width: 320px) {
+  header {
+    #hidden-h3 {
+      display: block;
+      font-size: 1.1rem;
+      font-family: rubik;
+      color: $color5;
+      margin-bottom: 1rem;
+    }
+    #header-div {
+      height: 20rem;
+      max-width: 15rem;
+      margin: auto;
+      flex-direction: column;
+      #title-div {
+        width: 100%;
+        height: 10vh;
+        h1 {
+          font-size: 2rem;
+          text-align: center;
+        }
+
+        h3 {
+          display: none;
+        }
+      }
+      #header-image {
+        width: 100%;
+      }
+    }
+    #header-content {
+      #header-bio {
+        font-size: 0.7rem;
+      }
+      #skills-list {
+        margin-top: 0;
+        span {
+          font-size: 0.7rem;
+          padding: 0 0.1rem;
+        }
+      }
+      #cv-button {
+        font-size: 10px;
+      }
+    }
   }
+  #projects {
+    h2 {
+      margin-bottom: 2.5rem;
+      font-size: 1.2rem;
+    }
+    #main-project {
+      height: 6rem;
+    }
+    .video-overlay {
+      height: 0.8rem;
+    }
+    .main-proj-title {
+      padding-top: 0.6rem;
+      font-size: 0.6rem;
+    }
+    .project-info {
+      .main-proj-check {
+        font-size: 10px;
+      }
 
-  .course-div {
-    .course-div-right {
-      h5 {
-        font-size: 0.9rem;
+      p,
+      span {
+        font-size: 0.6rem;
+      }
+    }
+  }
+  #qualifications {
+    h2 {
+      font-size: 1.2rem;
+    }
+    h3 {
+      font-size: 0.8rem;
+    }
+    p {
+      font-size: 0.6rem;
+    }
+    .course-div {
+      .course-div-left {
+        img {
+          width: 1.5rem;
+        }
       }
     }
   }
