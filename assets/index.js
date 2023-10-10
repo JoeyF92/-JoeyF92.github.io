@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       name: "YourVote",
       video: "https://www.youtube.com/embed/DYPOM17suRE?si=O2A7uGBTT-I8ciIp",
-      image: "assets/YourVote.png",
+      image: "assets/yourvote.png",
       code: "https://github.com/JoeyF92/local-council-app",
       content:
         "As part of my coursework at La Fosse Academy, I collaborated on a project aimed at addressing community engagement challenges for the Florin Council. We designed and developed a dedicated platform that empowers residents to propose and vote on enhancements for their local area.",
