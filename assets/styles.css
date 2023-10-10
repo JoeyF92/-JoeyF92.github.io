@@ -1,30 +1,24 @@
 body {
-  background-color: #03001c;
-  color: #eafff9;
+  background-color: #fff;
+  color: #000000;
   font-family: lato;
   overflow-x: hidden;
-}
-
-a {
-  color: #b6eada;
-}
-
-a:hover {
-  color: #96acbe;
-}
-
-p,
-label {
-  color: #96acbe;
+  width: 100vw;
+  padding-top: 60px;
 }
 
 .navbar {
+  position: fixed;
+  top: 0;
+  z-index: 100;
   width: 100vw;
   display: inline-block;
 }
 .navbar a {
   position: relative; /* establish relative positioning for pseudo-element */
-  color: #301e67; /* set font color */
+  color: #ff9090 !important; /* set font color */
+  text-transform: uppercase;
+  font-size: 0.9rem;
 }
 .navbar a::before {
   content: ""; /* create pseudo-element */
@@ -33,7 +27,7 @@ label {
   left: 0; /* start pseudo-element at left edge of text */
   width: 0; /* set initial width to 0 */
   height: 3px; /* set height of underline */
-  background-color: #b6eada; /* set color of underline */
+  background-color: #ffb5b5; /* set color of underline */
   transition: width 0.2s ease-in-out; /* add transition effect to width */
 }
 .navbar a:hover::before {
@@ -55,12 +49,12 @@ label {
 }
 
 hr {
-  background-color: #ffffff;
+  background-color: #000000;
   height: 1px;
-  margin: 5rem auto 5rem auto;
+  margin: 5rem auto 2rem auto;
   border: none;
   outline: none;
-  box-shadow: 1px 1px 14px 3px #b6eada;
+  box-shadow: 0px 0px 5px 0px #ffc8c8;
 }
 
 header,
@@ -75,42 +69,151 @@ p {
 }
 
 header {
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
-header p {
-  text-align: center;
+header #hidden-h3 {
+  display: none;
 }
 header #header-div {
   display: flex;
-  width: 60vw;
-  margin: auto;
-  margin-bottom: 2rem;
+  justify-content: center;
+  width: 80vw;
+  padding-bottom: 4rem;
 }
-header #header-div img {
-  width: 10rem;
+header #header-div #title-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 35%;
+  height: 22rem;
 }
-header #header-div h1 {
+header #header-div #title-div h1 {
+  font-family: Rubik;
+  font-size: 5.5rem;
+  min-height: 11rem;
+  max-width: 20rem;
+}
+header #header-div #title-div h3 {
+  width: 33rem;
+  font-family: Rubik;
+  font-size: 2rem;
+  margin-top: 1.5rem;
+  color: #ff5858;
+}
+header #header-div #header-image {
+  width: 65%;
+  display: flex;
+}
+header #header-div #header-image img {
+  width: 20rem;
   margin: auto;
+  transition: transform 0.3s ease;
+}
+header #header-div #header-image img:hover {
+  transform: scale(1.05);
+}
+header #header-content {
+  text-align: center;
+  /* Hover Effect */
+}
+header #header-content p {
+  color: #000000;
+  font-size: 1.4rem;
+}
+header #header-content #key-skills {
+  text-align: center;
+}
+header #header-content #header-bio {
+  text-align: left;
+}
+header #header-content #skills-list {
+  margin-top: 0.5rem;
+  text-align: center;
+}
+header #header-content #skills-list span {
+  font-size: 1.1rem;
+  padding: 0 1rem 0 1rem;
+  transition: transform 0.2s ease;
+  display: inline-block; /* Add this to enable 3D transformations */
+}
+header #header-content #skills-list span:not(:first-child):hover {
+  color: #ff5858;
+  transform: skewY(20deg) skewX(80deg);
+}
+header #header-content #cv-button {
+  color: #fff;
+  background-color: #ff9090;
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+header #header-content #cv-button:hover {
+  background-color: #ff5858;
+}
+header #header-content #cv-button:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgb(0, 0, 0);
+}
+@media (max-width: 1000px) {
+  header header #header-div #title-div h1 {
+    font-size: 4.5rem;
+  }
+  header header #header-div #header-image img {
+    width: 15rem;
+  }
 }
 
+#projects {
+  padding-top: 100px;
+}
 #projects #main-project {
   display: flex;
 }
 #projects h2 {
   margin-bottom: 3rem;
+  font-family: Rubik;
+  color: #000000;
+}
+#projects .main-proj-title {
+  font-family: lato;
+  font-weight: 500;
+  color: #fff;
 }
 #projects #main-video-div {
-  margin: auto;
+  position: relative;
+  width: 80%;
+  margin: 0 auto 2rem auto;
+}
+#projects .video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  margin-bottom: 4rem;
+  height: 10%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 #projects #main-video {
   width: 100%;
-  margin-top: 2rem;
-  border: 4px solid black;
+  border: 4px solid rgba(228, 223, 223, 0.6588235294);
   aspect-ratio: 16/9;
   justify-content: center;
-  box-shadow: 4px 8px 12px 2px rgba(91, 143, 185, 0.4588235294);
+  box-shadow: 0 4px 8px #ffc8c8;
+}
+#projects #other-projects-title {
+  margin-top: 4rem;
 }
 #projects .project-grid {
   margin-top: 2rem;
@@ -121,8 +224,8 @@ header #header-div h1 {
   justify-content: center;
 }
 #projects .proj-instance {
-  box-shadow: 4px 8px 12px 2px rgba(91, 143, 185, 0.4588235294);
-  background-color: rgba(255, 255, 255, 0.0941176471);
+  box-shadow: 0px 3px 8px 0px #000000;
+  background-color: rgba(255, 255, 255, 0.2745098039);
   width: 220px;
   margin-top: 1.5rem;
   margin: 1.5rem 0.5rem auto 0.5rem;
@@ -137,24 +240,65 @@ header #header-div h1 {
 #projects .proj-instance a {
   text-align: center;
 }
+#projects .proj-instance p {
+  font-size: 1.3rem;
+}
 #projects .proj-instance:hover {
-  cursor: grab;
+  cursor: pointer;
   animation: wiggle 2.5s;
 }
 #projects .project-info {
+  width: 80%;
   margin: 1rem auto 0 auto;
-  text-align: center;
+  /* Hover Effect */
 }
-#projects .project-info .main-proj-title {
-  margin-bottom: 2rem;
-  color: #b6eada;
+#projects .project-info p {
+  text-align: center;
+  font-size: 1.1rem;
+}
+#projects .project-info span {
+  font-size: 1.1rem;
+  padding: 0 0.2rem 0 0.2rem;
+}
+#projects .project-info span:hover {
+  color: #ff6b6b;
+}
+#projects .project-info .main-proj-check {
+  color: #fff;
+  background-color: #ff9090;
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+#projects .project-info .main-proj-check:hover {
+  background-color: #ff5858;
+}
+#projects .project-info .main-proj-check:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 #qualifications {
-  margin-top: 3rem;
+  padding-top: 100px;
 }
 #qualifications h2 {
+  font-family: rubik;
   margin-bottom: 4rem;
+}
+#qualifications h3 {
+  font-size: 1.4rem;
+}
+#qualifications p {
+  font-size: 1.2rem;
 }
 #qualifications .course-div {
   display: flex;
@@ -175,14 +319,16 @@ header #header-div h1 {
   padding-left: 0.4rem;
 }
 #qualifications .course-div .course-div-right p {
-  color: #b6eada;
+  color: #ffb5b5;
 }
 
 #contact-me {
+  padding-top: 60px;
   perspective: 1000px;
 }
 #contact-me h2 {
-  margin-bottom: 2rem;
+  font-family: rubik;
+  margin-bottom: 4rem;
 }
 #contact-me #email-div {
   width: 100%;
@@ -192,6 +338,7 @@ header #header-div h1 {
 }
 #contact-me #email-form {
   width: 95%;
+  max-width: 30rem;
   margin: 1rem auto 2rem auto;
 }
 #contact-me label {
@@ -199,14 +346,16 @@ header #header-div h1 {
 }
 #contact-me input,
 #contact-me textarea {
+  background-color: rgba(241, 241, 241, 0.4941176471);
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.3294117647);
   border: none;
   padding: 0.5rem;
   margin-left: auto;
   margin-bottom: 2rem;
-  box-shadow: 4px 4px 10px rgba(91, 143, 185, 0.4588235294);
-  color: #b6eada;
+  box-shadow: 0 1px 1px #000000;
+}
+#contact-me #email-body {
+  height: 10rem;
 }
 #contact-me .input-class {
   text-align: center;
@@ -218,27 +367,28 @@ header #header-div h1 {
   text-align: center;
 }
 #contact-me #form-button {
+  color: #fff;
+  background-color: #ff9090;
+  display: inline-block;
   margin-top: 1rem;
-  width: 6rem;
-  box-shadow: 0px 6px 6px #96acbe;
-  border-radius: 20%;
-  border: none;
-  color: #96acbe;
-  background: white;
-  position: relative;
+  margin-bottom: 2rem;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
   text-transform: uppercase;
-  font-weight: 300;
-  letter-spacing: 2px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
 #contact-me #form-button:hover {
-  top: 2px;
-  color: #c2c2d3;
-  box-shadow: 0 4px 4px #96acbe;
+  background-color: #ff5858;
 }
-#contact-me #form-button:active {
-  top: 6px;
-  color: #90909c;
-  box-shadow: 0 1px 1px #96acbe;
+#contact-me #form-button:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgb(0, 0, 0);
 }
 #contact-me .loader {
   display: flex;
@@ -249,7 +399,7 @@ header #header-div h1 {
   background: transparent;
   margin: 30px auto 0 auto;
   border: solid 2px #424242;
-  border-top: solid 2px #1c89ff;
+  border-top: solid 2px #ff9090;
   border-radius: 50%;
   opacity: 0;
 }
@@ -290,7 +440,7 @@ header #header-div h1 {
 }
 #contact-me #error {
   display: block;
-  color: red;
+  color: #ff6b6b;
   text-align: center;
   animation: blink 1s;
   animation-iteration-count: 6;
@@ -300,6 +450,15 @@ header #header-div h1 {
 footer {
   display: flex;
   justify-content: space-between;
+}
+footer p {
+  font-size: 1rem;
+}
+footer a {
+  color: #ff9090;
+}
+footer a:hover {
+  color: #ff5858;
 }
 
 .hide-project {
@@ -353,7 +512,7 @@ footer {
   100% {
     opacity: 1;
     transform: rotate(1080deg);
-    border-color: #1c89ff;
+    border-color: #ffb5b5;
   }
 }
 @keyframes blink {
@@ -401,114 +560,359 @@ footer {
     transform: rotate(0deg);
   }
 }
-@media (max-width: 700px) {
-  #projects .project-grid .proj-instance {
-    width: 160px;
-  }
-}
-@media (max-width: 1300px) {
-  p {
-    font-size: 1.2rem;
-  }
-  #projects #main-video-div {
-    margin-bottom: 2rem;
-  }
-}
-@media (max-width: 600px) {
-  h2 {
-    font-size: 1.5rem;
-  }
-  h3 {
-    font-size: 1.3rem;
-  }
-  p {
-    font-size: 1.1rem;
-  }
-  #header-div {
-    flex-direction: column;
-  }
-  #header-div h1 {
+@media (max-width: 1000px) {
+  header #header-div {
     padding-bottom: 2rem;
   }
-  #header-div img {
-    width: 12rem;
-    margin: auto;
+  header #header-div #title-div {
+    height: 18rem;
   }
-  .course-div {
-    flex-direction: column;
-    align-items: center;
+  header #header-div #title-div h1 {
+    font-size: 4.5rem;
   }
-  .course-div .course-div-left {
-    margin-bottom: 1.5rem;
+  header #header-div #title-div h3 {
+    font-size: 1.5rem;
   }
-  .course-div .course-div-right {
-    text-align: center;
+  header #header-div #header-image img {
+    width: 15rem;
   }
-  .course-div .course-div-right h5 {
-    font-size: 1.1rem;
-  }
-}
-@media (max-width: 576px) {
-  .navbar-nav {
-    margin: auto;
-  }
-  p {
+  header #header-content p {
     font-size: 1rem;
   }
-  hr {
-    margin: 3rem auto 3rem auto;
+  header #header-content #skills-list span {
+    font-size: 0.9rem;
   }
-  #projects .project-info h5 {
+  header #header-content #cv-button {
+    margin-top: 1rem;
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+  #projects .project-info p,
+  #projects .project-info span {
+    font-size: 1rem;
+  }
+  #projects .project-info .main-proj-check {
+    margin-top: 1rem;
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+  #projects .video-overlay {
+    height: 1.4rem;
+  }
+  #projects .main-proj-title {
+    padding-top: 0.3rem;
     font-size: 1.2rem;
   }
-  #projects .project-info a {
-    font-size: 0.8rem;
+  #projects .proj-instance {
+    width: 180px;
   }
-  #projects .project-grid {
-    margin-top: 1rem;
-  }
-  #projects .project-grid .proj-instance {
-    width: 130px;
-  }
-}
-@media (max-width: 415px) {
-  #qualifications,
-  #projects,
-  #contact-me,
-  #header-div {
-    width: 90%;
-  }
-  h1 {
-    font-size: 1.8rem;
-    text-align: center;
-  }
-  h3 {
+  #projects .proj-instance p {
     font-size: 1.1rem;
   }
-  p,
-  a,
-  label,
-  input,
-  textarea {
-    font-size: 0.8rem;
+  #qualifications {
+    padding-top: 100px;
   }
-  #header-div img {
-    width: 9rem;
+  #qualifications h2 {
+    font-size: 1.8rem;
   }
-  .project-info {
-    width: 100%;
+  #contact-me h2 {
+    font-size: 2rem;
   }
-  .project-info h5 {
+  #contact-me #form-button {
+    margin-top: 1rem;
+    font-size: 14px;
+    padding: 8px 16px;
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 860px) {
+  header #header-div {
+    padding-bottom: 0;
+  }
+  header #header-div #title-div {
+    height: 18rem;
+  }
+  header #header-div #title-div h1 {
+    font-size: 3.5rem;
+    min-height: 4rem;
+  }
+  header #header-div #title-div h3 {
+    font-size: 1.3rem;
+    margin-top: 1rem;
+  }
+  header #header-div #header-image img {
+    width: 12rem;
+  }
+  header #header-content #header-bio {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  #projects .proj-instance {
+    width: 160px;
+  }
+  #projects .proj-instance p {
+    font-size: 1.1rem;
+  }
+  #qualifications h3 {
+    font-size: 1.2rem;
+  }
+  #qualifications p {
     font-size: 1rem;
   }
-  .project-info p,
-  .project-info a {
+  #qualifications #error p {
+    font-size: 0.5rem;
+  }
+  footer p,
+  footer a {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 700px) {
+  header #header-div {
+    height: 17rem;
+    padding-bottom: 0;
+  }
+  header #header-div #title-div {
+    height: 18rem;
+  }
+  header #header-div #title-div h3 {
+    font-size: 1.2rem;
+  }
+  header #header-content #skills-list {
+    margin-top: 2rem;
+  }
+  header #header-content #skills-list span {
+    padding: 0 0.5rem 0 0.5rem;
+  }
+  #projects h2 {
+    font-size: 1.5rem;
+  }
+  #projects #main-video-div {
+    width: auto;
+  }
+  #projects .project-info p,
+  #projects .project-info span {
+    font-size: 0.9rem;
+  }
+  #projects .proj-instance {
+    width: 140px;
+  }
+  #projects .proj-instance p {
+    font-size: 0.9rem;
+  }
+  #qualifications h2 {
+    font-size: 1.5rem;
+  }
+  #qualifications h3 {
+    font-size: 1rem;
+  }
+  #qualifications p {
+    font-size: 0.9rem;
+  }
+  #qualifications .course-div .course-div-left img {
+    width: 2.5rem;
+  }
+  #contact-me {
+    padding-top: 1.5rem;
+  }
+  #contact-me h2 {
+    font-size: 1.5rem;
+  }
+  #contact-me #email-form {
+    width: 20rem;
+  }
+}
+@media (max-width: 500px) {
+  header #hidden-h3 {
+    display: block;
+    font-size: 1.1rem;
+    font-family: rubik;
+    color: #ff5858;
+    margin-bottom: 1rem;
+  }
+  header #header-div {
+    height: 20rem;
+    max-width: 15rem;
+    margin: auto;
+    flex-direction: column;
+  }
+  header #header-div #title-div {
+    width: 100%;
+    height: 10vh;
+  }
+  header #header-div #title-div h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  header #header-div #title-div h3 {
+    display: none;
+  }
+  header #header-div #header-image {
+    width: 100%;
+  }
+  header #header-content #header-bio {
     font-size: 0.7rem;
   }
-  .proj-instance {
-    width: 110px;
+  header #header-content #skills-list span {
+    font-size: 0.7rem;
+    padding: 0 0.25rem;
   }
-  .course-div .course-div-right h5 {
+  header #header-content #cv-button {
+    font-size: 10px;
+  }
+  #projects h2 {
+    font-size: 1.3rem;
+  }
+  #projects #main-project {
+    height: 10rem;
+  }
+  #projects .video-overlay {
+    height: 1.1rem;
+  }
+  #projects .main-proj-title {
+    padding-top: 0.3rem;
+    font-size: 1.2rem;
+  }
+  #projects .project-info .main-proj-check {
+    font-size: 10px;
+  }
+  #projects .project-info p,
+  #projects .project-info span {
+    font-size: 0.8rem;
+  }
+  #projects .proj-instance {
+    width: 120px;
+  }
+  #projects .proj-instance p {
+    font-size: 0.8rem;
+  }
+  #qualifications {
+    padding-top: 100px;
+  }
+  #qualifications h2 {
+    font-size: 1.3rem;
+  }
+  #qualifications h3 {
     font-size: 0.9rem;
+  }
+  #qualifications p {
+    font-size: 0.7rem;
+  }
+  #qualifications .course-div .course-div-left img {
+    width: 2rem;
+  }
+  #contact-me #form-button {
+    font-size: 12px;
+  }
+  #contact-me h2 {
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  #contact-me #email-form {
+    width: 17rem;
+  }
+}
+@media (max-width: 390px) {
+  #projects .proj-instance {
+    width: auto;
+  }
+  #projects .proj-instance p {
+    font-size: 1rem;
+  }
+  #contact-me #form-button {
+    font-size: 12px;
+  }
+  #contact-me h2 {
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  #contact-me input,
+  #contact-me textarea {
+    font-size: 0.6rem;
+  }
+  #contact-me #email-form {
+    width: 14rem;
+  }
+  #contact-me #email-body {
+    height: 5rem;
+  }
+  footer p,
+  footer a {
+    font-size: 0.6rem;
+  }
+}
+@media (max-width: 320px) {
+  header #hidden-h3 {
+    display: block;
+    font-size: 1.1rem;
+    font-family: rubik;
+    color: #ff5858;
+    margin-bottom: 1rem;
+  }
+  header #header-div {
+    height: 20rem;
+    max-width: 15rem;
+    margin: auto;
+    flex-direction: column;
+  }
+  header #header-div #title-div {
+    width: 100%;
+    height: 10vh;
+  }
+  header #header-div #title-div h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  header #header-div #title-div h3 {
+    display: none;
+  }
+  header #header-div #header-image {
+    width: 100%;
+  }
+  header #header-content #header-bio {
+    font-size: 0.7rem;
+  }
+  header #header-content #skills-list {
+    margin-top: 0;
+  }
+  header #header-content #skills-list span {
+    font-size: 0.7rem;
+    padding: 0 0.1rem;
+  }
+  header #header-content #cv-button {
+    font-size: 10px;
+  }
+  #projects h2 {
+    margin-bottom: 2.5rem;
+    font-size: 1.2rem;
+  }
+  #projects #main-project {
+    height: 6rem;
+  }
+  #projects .video-overlay {
+    height: 0.8rem;
+  }
+  #projects .main-proj-title {
+    padding-top: 0.6rem;
+    font-size: 0.6rem;
+  }
+  #projects .project-info .main-proj-check {
+    font-size: 10px;
+  }
+  #projects .project-info p,
+  #projects .project-info span {
+    font-size: 0.6rem;
+  }
+  #qualifications h2 {
+    font-size: 1.2rem;
+  }
+  #qualifications h3 {
+    font-size: 0.8rem;
+  }
+  #qualifications p {
+    font-size: 0.6rem;
+  }
+  #qualifications .course-div .course-div-left img {
+    width: 1.5rem;
   }
 }/*# sourceMappingURL=styles.css.map */
