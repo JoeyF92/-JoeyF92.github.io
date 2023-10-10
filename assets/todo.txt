@@ -1,8 +1,5 @@
-get la fosse work up
-make text smaller
-change colour scheme
-sort out yotube size of bits - and autoplay
-make sure navigation links go the right place
-make sure videos are working
+
+
+
 
 
