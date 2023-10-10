@@ -247,10 +247,10 @@ document.addEventListener("DOMContentLoaded", function () {
         if (data.success == "true") {
           loader.addEventListener("animationend", function () {
             check.classList.add("active");
-            setTimeout(function () {
-              loader.classList.remove("active");
-              document.getElementById("email-form").reset();
-            }, 5000);
+            // setTimeout(function () {
+            //   loader.classList.remove("active");
+            //   document.getElementById("email-form").reset();
+            // }, 5000);
           });
         }
       })
