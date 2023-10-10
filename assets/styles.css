@@ -413,18 +413,22 @@ header #header-content #cv-button:focus {
   transform: translate3d(-4px, 50px, 0);
   opacity: 0;
 }
+#contact-me .check span:nth-child(1),
+#contact-me .check span:nth-child(2) {
+  transform-origin: center; /* Add this line */
+}
 #contact-me .check span:nth-child(1) {
   display: block;
   width: 10px;
   height: 2px;
-  background-color: #fff;
+  background-color: #ffb5b5;
   transform: rotate(45deg);
 }
 #contact-me .check span:nth-child(2) {
   display: block;
   width: 20px;
   height: 2px;
-  background-color: #fff;
+  background-color: #ffb5b5;
   transform: rotate(-45deg) translate3d(14px, -4px, 0);
   transform-origin: 100%;
 }

@@ -168,7 +168,7 @@
 
   <section id="contact-me">
     <h2> Get in touch:</h2>
-      <form id="email-form" method="POST" />
+      <form id="email-form" method="POST" >
         <input type="hidden" name="_subject" value="New Enquiry!">
         <!-- <label for "name">Name:</label> -->
         <input type="text" id="email-name" placeholder="Name" name="name" required>
@@ -183,17 +183,15 @@
         <div id="form-button-div">
           <button id="form-button" type="submit">Send</button>
         </div>
+        <div id="error">
+          <p> Error, Message Failed </p>
+        </div>
         <div class="loader">
-          <div id="error">
-            <p> Error, Message Failed </p>
-          </div>
           <div class="check">
             <span class="check-one"></span>
             <span class="check-two"></span>
           </div>
-          
-        </div>
-        
+        </div>     
         
         
         
