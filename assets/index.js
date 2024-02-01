@@ -117,6 +117,10 @@ document.addEventListener("DOMContentLoaded", function () {
       .addEventListener("submit", (e) => emailFetch(e));
     //listen for user attemping to expand other projects
     expand();
+    const buttonElement = document.querySelector("#cv-button");
+    buttonElement.addEventListener("click", function() {
+      window.location.href = 'https://drive.google.com/file/d/11usx7IHhNjr6xZq-eBMB5-Oy2jjTuEZu/view';
+    });
   }
 
   function expand() {
